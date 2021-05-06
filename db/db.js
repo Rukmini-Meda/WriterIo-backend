@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
+require('dotenv').config()
 
 mongoose.Promise = global.Promise;
 
-const url = "your url here"
+// const url = "your url here"
 // Connect MongoDB at default port 27017.
-let mong = mongoose.connect(url, {
+let mong = mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true
